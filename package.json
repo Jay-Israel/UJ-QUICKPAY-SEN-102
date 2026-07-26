@@ -3,21 +3,26 @@
   "version": "1.0.0",
   "private": true,
   "description": "A React fintech dashboard demonstrating software design principles for UNIJOS payments.",
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "serve": "vite preview --host 0.0.0.0"
   },
+
   "engines": {
-    "node": "24"
+    "node": "20"
   },
+
   "dependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^6.0.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0"
   },
-  "devDependencies": {}
+
+  "devDependencies": {
+    "vite": "^6.0.7",
+    "@vitejs/plugin-react": "^4.3.4"
+  }
 }
