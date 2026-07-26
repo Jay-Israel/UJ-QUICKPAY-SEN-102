@@ -45,7 +45,7 @@ function App() {
   const [activePage, setActivePage] = useState("dashboard");
   const [selectedFee, setSelectedFee] = useState(null);
   const [currentStudentProfile, setCurrentStudentProfile] = useState(
-    profileService.getProfile()
+    () => profileService.getProfile()
   );
 
   const gatewayOptions = Object.entries(paymentGateways).map(
