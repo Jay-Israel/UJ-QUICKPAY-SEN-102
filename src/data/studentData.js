@@ -1,9 +1,9 @@
 export const studentProfile = {
   name: "Joshua Favour Ajagbe",
   matricNumber: "UJ2025CP0454",
-  programme: "Computer Science",
+  programme: "Software Engineering",
   level: "100 Level",
-  faculty: "Natural Sciences",
+  faculty: "Computing",
   email: "uj2025cp0454@student.unijos.edu.ng",
 };
 
@@ -12,7 +12,7 @@ export const feeItems = [
     id: "tuition",
     title: "Tuition Fee",
     category: "Academics",
-    amount: 58000,
+    amount: 175000,
     dueDate: "2026-08-16",
     status: "Due",
   },
@@ -20,7 +20,7 @@ export const feeItems = [
     id: "acceptance",
     title: "Acceptance Fee",
     category: "Admissions",
-    amount: 25000,
+    amount: 30000,
     dueDate: "2026-08-02",
     status: "Priority",
   },
@@ -57,5 +57,35 @@ export const supportChannels = [
     title: "Student Affairs",
     detail: "Hostel payments, accommodation status, and student records",
     contact: "studentaffairs@unijos.edu.ng",
+  },
+];
+
+export const loanPlans = [
+  {
+    id: "fee-installment",
+    title: "School Fee Installment Plan",
+    amount: 75000,
+    tenor: "3 months",
+    rate: "0%",
+    status: "Available",
+    detail: "Split approved tuition and registration charges into monthly campus payments.",
+  },
+  {
+    id: "emergency-support",
+    title: "Emergency Fee Support",
+    amount: 40000,
+    tenor: "8 weeks",
+    rate: "1.5%",
+    status: "Review",
+    detail: "Short-term support for time-sensitive academic clearance and exam registration.",
+  },
+  {
+    id: "device-support",
+    title: "Learning Device Support",
+    amount: 120000,
+    tenor: "6 months",
+    rate: "2%",
+    status: "Coming Soon",
+    detail: "Structured support for approved learning devices and departmental tools.",
   },
 ];

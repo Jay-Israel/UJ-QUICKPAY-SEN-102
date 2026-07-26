@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import Header from "./components/Header.jsx";
 import {
   feeItems,
+  loanPlans,
   studentProfile,
   supportChannels,
 } from "./data/studentData.js";
@@ -13,6 +14,7 @@ import FlutterwaveGateway from "./gateways/FlutterwaveGateway.js";
 import RemitaGateway from "./gateways/RemitaGateway.js";
 import DashboardPage from "./pages/DashboardPage.jsx";
 import FeesPage from "./pages/FeesPage.jsx";
+import LoansPage from "./pages/LoansPage.jsx";
 import PaymentsPage from "./pages/PaymentsPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import SupportPage from "./pages/SupportPage.jsx";
@@ -98,6 +100,8 @@ function App() {
             onSelectFee={handleSelectFee}
           />
         );
+      case "loans":
+        return <LoansPage loanPlans={loanPlans} />;
       case "transactions":
         return <TransactionsPage transactions={transactions} />;
       case "profile":

@@ -196,6 +196,7 @@ h3 {
 
 .stats-grid,
 .fee-grid,
+.loan-grid,
 .profile-grid,
 .support-grid {
   display: grid;
@@ -207,6 +208,7 @@ h3 {
 }
 
 .fee-grid,
+.loan-grid,
 .profile-grid,
 .support-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -517,16 +519,54 @@ h3 {
   gap: 10px;
 }
 
-.fee-card-top {
+.loan-card {
+  display: grid;
+  gap: 12px;
+}
+
+.fee-card-top,
+.loan-card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: #047857;
 }
 
-.fee-card strong {
+.fee-card strong,
+.loan-card strong {
   color: #102a56;
   font-size: 1.6rem;
+}
+
+.loan-card p {
+  color: #64748b;
+}
+
+.loan-terms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.loan-terms div {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.loan-terms dt {
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.loan-terms dd {
+  margin: 2px 0 0;
+  color: #102a56;
+  font-weight: 900;
 }
 
 .status-badge {
@@ -588,11 +628,21 @@ h3 {
   gap: 12px;
 }
 
+.checklist {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+  color: #334155;
+  font-weight: 700;
+}
+
 @media (max-width: 900px) {
   .dashboard-grid,
   .two-column-page,
   .stats-grid,
   .fee-grid,
+  .loan-grid,
   .profile-grid,
   .support-grid {
     grid-template-columns: 1fr;

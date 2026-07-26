@@ -1,6 +1,6 @@
 # QuickPay UNIJOS
 
-QuickPay UNIJOS is a React + Vite student payment portal created for a Software Design Principles assignment. It demonstrates a clean JavaScript architecture with wallet management, payment gateway selection, fee payments, success and failure notifications, transaction history, student profile, support pages, and LocalStorage persistence.
+QuickPay UNIJOS is a React + Vite student payment portal created for a Software Design Principles assignment. It demonstrates a clean JavaScript architecture with wallet management, payment gateway selection, fee payments, student loan plans, success and failure notifications, transaction history, student profile, support pages, and LocalStorage persistence.
 
 ## Features
 
@@ -9,6 +9,7 @@ QuickPay UNIJOS is a React + Vite student payment portal created for a Software 
 - Pay custom amounts or prefilled fee items
 - Display success and failure notifications
 - View fee schedule, receipts, student profile, and support contacts
+- Review student loan and payment-plan options
 - Persist wallet balance and transaction history with LocalStorage
 - Responsive deployment-ready UI with React Icons
 
@@ -55,6 +56,7 @@ src/
   pages/
     DashboardPage.jsx
     FeesPage.jsx
+    LoansPage.jsx
     PaymentsPage.jsx
     ProfilePage.jsx
     SupportPage.jsx
