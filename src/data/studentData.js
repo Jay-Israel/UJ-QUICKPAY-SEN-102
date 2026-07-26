@@ -3,7 +3,7 @@ export const studentProfile = {
   matricNumber: "UJ2025CP0454",
   programme: "Software Engineering",
   level: "100 Level",
-  faculty: "Computing",
+  faculty: "Faculty of Computing",
   email: "uj2025cp0454@student.unijos.edu.ng",
 };
 

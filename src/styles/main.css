@@ -51,14 +51,22 @@ a:hover {
 
 .header {
   display: grid;
-  gap: 22px;
+  gap: 14px;
   margin-bottom: 28px;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .brand-block {
   display: flex;
   align-items: center;
   gap: 16px;
+  min-width: 0;
 }
 
 .brand-mark,
@@ -86,21 +94,62 @@ a:hover {
   background: #d1fae5;
 }
 
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 16px;
+  color: #ffffff;
+  background: #102a56;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 14px 24px rgba(16, 42, 86, 0.18);
+  white-space: nowrap;
+}
+
+.menu-toggle:hover {
+  background: #1d4ed8;
+}
+
 .app-nav {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding: 6px;
+  display: none;
+  gap: 14px;
+  padding: 16px;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.84);
+  background: #ffffff;
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+}
+
+.app-nav.open {
+  display: grid;
+}
+
+.nav-menu-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-menu-heading strong {
+  color: #102a56;
+}
+
+.app-nav > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
 }
 
 .nav-button {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 8px;
   min-height: 42px;
   border: 0;
@@ -110,7 +159,7 @@ a:hover {
   background: transparent;
   font-weight: 800;
   cursor: pointer;
-  white-space: nowrap;
+  text-align: left;
 }
 
 .nav-button:hover,
@@ -328,7 +377,8 @@ h3 {
 }
 
 .payment-form input,
-.payment-form select {
+.payment-form select,
+.profile-form input {
   width: 100%;
   min-height: 48px;
   border: 1px solid #cbd5e1;
@@ -340,7 +390,8 @@ h3 {
 }
 
 .payment-form input:focus,
-.payment-form select:focus {
+.payment-form select:focus,
+.profile-form input:focus {
   border-color: #1d4ed8;
   box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.12);
 }
@@ -622,6 +673,27 @@ h3 {
   overflow-wrap: anywhere;
 }
 
+.profile-editor {
+  grid-column: 1 / -1;
+}
+
+.profile-form {
+  display: grid;
+  gap: 12px;
+}
+
+.profile-form label {
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.success-text {
+  margin: 12px 0 0;
+  color: #047857;
+  font-weight: 800;
+}
+
 .support-card {
   display: grid;
   align-content: start;
@@ -670,7 +742,11 @@ h3 {
   }
 
   .app-nav {
-    padding: 4px;
+    padding: 14px;
+  }
+
+  .app-nav > div:last-child {
+    grid-template-columns: 1fr;
   }
 
   .nav-button {

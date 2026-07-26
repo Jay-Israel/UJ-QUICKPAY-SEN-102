@@ -8,6 +8,7 @@ import {
 } from "./data/studentData.js";
 import WalletService from "./services/WalletService.js";
 import PaymentService from "./services/PaymentService.js";
+import ProfileService from "./services/ProfileService.js";
 import NotificationService from "./services/NotificationService.js";
 import PaystackGateway from "./gateways/PaystackGateway.js";
 import FlutterwaveGateway from "./gateways/FlutterwaveGateway.js";
@@ -22,6 +23,7 @@ import TransactionsPage from "./pages/TransactionsPage.jsx";
 
 const walletService = new WalletService();
 const notificationService = new NotificationService();
+const profileService = new ProfileService(studentProfile);
 
 const paymentGateways = {
   paystack: new PaystackGateway(),
@@ -42,6 +44,9 @@ function App() {
   const [notification, setNotification] = useState(null);
   const [activePage, setActivePage] = useState("dashboard");
   const [selectedFee, setSelectedFee] = useState(null);
+  const [currentStudentProfile, setCurrentStudentProfile] = useState(
+    profileService.getProfile()
+  );
 
   const gatewayOptions = Object.entries(paymentGateways).map(
     ([id, gateway]) => ({
@@ -72,6 +77,15 @@ function App() {
 
   const handleSelectFee = (fee) => {
     setSelectedFee(fee);
+  };
+
+  const handleProfileUpdate = (profileUpdates) => {
+    setCurrentStudentProfile(
+      profileService.saveProfile({
+        ...currentStudentProfile,
+        ...profileUpdates,
+      })
+    );
   };
 
   const renderPage = () => {
@@ -105,7 +119,12 @@ function App() {
       case "transactions":
         return <TransactionsPage transactions={transactions} />;
       case "profile":
-        return <ProfilePage studentProfile={studentProfile} />;
+        return (
+          <ProfilePage
+            onProfileUpdate={handleProfileUpdate}
+            studentProfile={currentStudentProfile}
+          />
+        );
       case "support":
         return <SupportPage supportChannels={supportChannels} />;
       default:
